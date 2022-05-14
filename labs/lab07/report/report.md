@@ -1,119 +1,125 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+**РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+**Факультет физико-математических и естественных наук**
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+*Отчёт по лабораторной работе №7  
+Дисциплина: Операционные системы*
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+Студент: Суконкин С.А.  
+Группа: НКНбд-02-21  
+№ ст. билета: 1032216457                                       
+
+МОСКВА
+2022 г.
+
 ---
 
-# Цель работы
+**Цель:**
+Освоение основных возможностей командной оболочки Midnight Commander. Приобретение навыков практической работы по просмотру каталогов и файлов; манипуляций с ними.
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+---
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+**Описание результатов выполнения задания:**
 
-# Задание
+**№1.**
+Запустил из командной строки mc, изучил его структуру и меню (Рис.1.1).
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.1.1.png?raw=true)  
+Рис.1.1. Запуск mc
 
-# Теоретическое введение
+**№2.** 
+Выполнил несколько операций в mc (выделение (Рис.2.1), копирование(Рис.2.2) и перемещение(Рис.2.3) файла).
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.2.1.png?raw=true)  
+Рис.2.1. Выделение файла
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.2.2.png?raw=true)  
+Рис.2.2. Копирование файла
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.2.3.png?raw=true)  
+Рис.2.3. Перемещение файла
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+**№3.**
+Выполнил основные команды левой панели (у меня интерфейс на англи	ском, поэтому и имена команд тоже будут на английском) (Рис3.1 и Рис.3.2).
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.3.1.png?raw=true)  
+Рис.3.1. Work with The Left side
 
-# Выполнение лабораторной работы
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.3.2.png?raw=true)  
+Рис.3.2. Information about The Left Side
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
+**№4.**
+Используя возможности подменю «Файл», выполнил (Рис.4.1-4.3):
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.4.1.png?raw=true)  
+Рис.4.1. Просмотр содержимого текстового файла
 
-# Выводы
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.4.2.png?raw=true)  
+Рис.4.2. Редактирование содержимого текстового файла без сохранения результатов редактирования
 
-Здесь кратко описываются итоги проделанной работы.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.4.3.png?raw=true)  
+Рис.4.3. Создание новой директории
 
-# Список литературы{.unnumbered}
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.4.4.png?raw=true)  
+Рис.4.4. Копирование файлов в новую директорию
 
-::: {#refs}
-:::
+**№5.**
+Используя возможности подменю «Команда», выполнил (Рис5.1-5.5): 
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.5.1.png?raw=true)  
+Рис.5.1. Поиск файла с расширением .c
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.5.2.png?raw=true)  
+Рис.5.2. Выбор и повторение одной из предыдущих команд
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.5.3.png?raw=true)  
+Рис.5.3. Переход в домашний каталог
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.5.4.png?raw=true)  
+Рис.5.4. Анализ файла меню
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.5.5.png?raw=true)  
+Рис.5.5. Анализ файла расширенного
+
+**№6.**
+Вызвал подменю настройки и освоил все базовые операции (Рис.6.1).
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.6.1.png?raw=true)  
+Рис.6.1. Вызов подменю «Настройки»
+
+**№7.**
+Создал текстовый файл text.txt. Открыл этот файл с помощью mc редактора. Вставил в файл небольшой размер текста, взятый из интернета (Рис.7.1).
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.1.png?raw=true)  
+Рис.7.1. 
+
+Удалил строку с помощью кнопки «F8» (Рис.7.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.2.png?raw=true)  
+Рис.7.2.
+
+Выделил текст и скопировал его на новую строку с помощью «F5» (Рис.7.3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.3.png?raw=true)  
+Рис.7.3.
+
+Выделил фрагмент текста и перенёс его на новую строку с помощью «Enter» (Рис7.4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.4.png?raw=true)  
+Рис.7.4.
+
+Сохранил файл, а потом отменил последнее действие (Рис.7.5).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.5.png?raw=true)  
+Рис.7.5.
+
+Перешёл в конец файла, использовав клавишу «Page Down» и вписал там текст. Перешёл в начало файла, использовав клавишу «Page Up» и вписал там текст.  Сохранил и закрыл файл (Рис.7.6).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.7.6.png?raw=true)  
+Рис.7.6.
+
+**№8.**
+Открыл файл на некотором языке программирования (в моём случае — С). Использовав меню редакторая, включил подсветку синтаксиса (Рис.8.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(7)/7.8.1.png?raw=true)  
+Рис.8.1.
+
+---
+
+**Выводы, согласованные с заданием работы:**
+Освоил основные возможности командной оболочки Midnight Commander. Приобрёл навыки практической работы по просмотру каталогов и файлов; манипуляций с ними.
+
