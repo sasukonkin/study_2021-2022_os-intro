@@ -1,119 +1,93 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+**РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+**Факультет физико-математических и естественных наук**
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+*Отчёт по лабораторной работе №8  
+Дисциплина: Операционные системы*
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+Студент: Суконкин С.А.  
+Группа: НКНбд-02-21  
+№ ст. билета: 1032216457                                       
+
+МОСКВА
+2022 г.
+
 ---
 
-# Цель работы
+**Цель:**
+Познакомиться с операционной системой Linux. Получить практические навыки работы с редактором vi.
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+---
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+**Описание результатов выполнения задания:**
 
-# Задание
+**№1.**
+Создал и перешёл в новосозданный каталог ~/work/os/lab06 (Рис.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.1.png?raw=true)  
+Рис. 1.
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+**№2.**
+Вызвал vi и создал файл hello.sh (Рис.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.2.png?raw=true)  
+Рис. 2.
 
-# Теоретическое введение
+**№3.**
+Нажал клавишу «i» и ввёл следующий текст. После чего нажал клавишу «esc» для перехода в командный режим (Рис.3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.3.png?raw=true)  
+Рис. 3.
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+**№4.**
+Нажал «:» для перехода в режим последней строки. В режиме последней строки ввёл «w» и «q» для сохранения файла. После чего нажал «esc» для выхода (Рис.4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.4.png?raw=true)  
+Рис. 4.
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+**№5.**
+Сделал файл исполняемым (Рис. 5).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.5.png?raw=true)  
+Рис. 5.
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+**№6.**
+Вызвал vi для редактирования файла hello.sh (Рис.6).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.6.png?raw=true)  
+Рис. 6.
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+**№7.**
+Сначала установил курсор в конце слова «HELL» во второй строке. После чего перешёл в режим ставки и заменил «HELL» на «HELLO». Нажал «esc» для возврата в командный режим (Рис. 7).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.7.png?raw=true)  
+Рис. 7.
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+**№8.**
+В четвёртой строке стёр слово «LOCAL» (Рис. 8).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.8.png?raw=true)  
+Рис. 8.
 
-# Выполнение лабораторной работы
+**№9.**
+Перешёл в режим вставки и набрал следующий «local». Нажал «esc » для
+возврата в командный режим (Рис. 9).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.9.png?raw=true)  
+Рис. 9.
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
+**№10.**
+Установил курсор на последней строке файлаю. Вставил после неё строку «echo $HELLO». Нажал «esc» для перехода в командный режим (Рис. 10).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.10.png?raw=true)  
+Рис. 10.
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
+**№11.**
+Удалил последнюю строку с помощью комбинации «d$» (Рис. 11).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.11.png?raw=true)  
+Рис. 11.
 
-# Выводы
+**№12.**
+Ввёл команду отмены изменений «u» для отмены последней команды (Рис. 12).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.12.png?raw=true)  
+Рис. 12.
 
-Здесь кратко описываются итоги проделанной работы.
+**№13.**
+Ввёл «:» для перехода в режим последней строки. Записал произведённые изменения и вышел из vi (Рис. 13).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(8)/8.13.png?raw=true)  
+Рис. 13.
 
-# Список литературы{.unnumbered}
+---
 
-::: {#refs}
-:::
+**Выводы, согласованные с заданием работы:**
+Познакомился с операционной системой Linux. Получил практические навыки работы с редактором vi.
