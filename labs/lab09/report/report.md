@@ -1,119 +1,125 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+**РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+**Факультет физико-математических и естественных наук**
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+*Отчёт по лабораторной работе №9  
+Дисциплина: Операционные системы*
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+Студент: Суконкин С.А.  
+Группа: НКНбд-02-21  
+№ ст. билета: 1032216457                                       
+
+МОСКВА
+2022 г.
+
 ---
 
-# Цель работы
+**Цель:**
+Познакомиться с операционной системой Linux. Получить практические навывки работы с редактором Emacs.
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+---
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+**Описание результатов выполнения задания:**
 
-# Задание
+**№1.**
+Открыл Emacs (Рис. 1).    
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.1.png?raw=true)      
+Рис.1
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+**№2.**
+Создал файл lab07.sh с помощью комбинации Ctrl-x Ctrl-f (Рис.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.2.png?raw=true)  
+Рис.2
 
-# Теоретическое введение
+**№3.**
+Набрал текст в файле (Рис. 3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.3.png?raw=true)  
+Рис.3
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+**№4.**
+Сохранил файл с помощью комбинации Ctrl-x Ctrl-f (Рис. 4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.4.png?raw=true)  
+Рис.4
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+**№5**
+Проделал с текстом стандартные процедуры редактирования (Рис 5.1 — 5.3):
+- Вырезал строку с помощью Ctrl-k (Рис. 5.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.5.1.png?raw=true)  
+Рис.5.1
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+- Вставил вырезанную строку в конец файла используя Ctrl-y (Рис. 5.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.5.2.png?raw=true)  
+Рис.5.2
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+- Выделил область текста Ctrl - space, скопировал его в буфер Meta - w, вставил область текста в конец. После чего вырезал эту же область Ctrl - w, а потом отменил последнее действие Ctrl - / (Рис. 5.3).   
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.5.3.png?raw=true)  
+Рис.5.3
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+**№6**
+Научился использовать команды по перемещению курсора (Рис. 6.1 — 6.4):
+- Перемещение курсора в начало строки, с помощью Ctrl-a (Рис. 6.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.6.1.png?raw=true)  
+Рис.6.1
 
-# Выполнение лабораторной работы
+- Перемещение курсора в конец строки, с помощью Ctrl-е (Рис. 6.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.6.2.png?raw=true)  
+Рис.6.2
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
+- Перемещение курсора в начало буфера, с помощью Meta - < (Рис. 6.3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.6.3.png?raw=true)  
+Рис.6.3
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
+- Перемещение курсора в конец буфер, с помощью  Meta - > (Рис. 6.4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.6.4.png?raw=true)  
+Рис.6.4
 
-# Выводы
+**№7**
+Научился использовать команды по управлению буферами (Рис. 7.1-7.4):
+- Вывод на экран список активных буферов, с помощью Ctrl-x Ctrl-b (Рис. 7.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.7.1.png?raw=true)  
+Рис.7.1  
 
-Здесь кратко описываются итоги проделанной работы.
+- Переместился во вновь открытое окно со списком открытых буферов и переключился на другой буфер (Рис. 7.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.7.2.png?raw=true)  
+Рис.7.2
 
-# Список литературы{.unnumbered}
+- Закрыл окно с открытыми буферами, используя Ctrl-x 0 (Рис. 7.3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.7.3.png?raw=true)  
+Рис.7.3
 
-::: {#refs}
-:::
+- Вновь переключился между буферами, но уже без вывода их списка на экран, используя Ctrl-x b (Рис. 7.4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.7.4.png?raw=true)  
+Рис.7.4
+
+**№8**
+Управление окнами:
+Разделил экран, используя  Ctrl-x 3, Ctrl-x 2 на 4 части. Сменил в каждом окне буферы. В каждом буфере что-то написал (Рис. 8).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.8.png?raw=true)  
+Рис.8
+
+**№9**
+Режим поиска (Рис. 9.1 — 9.5):
+- Перешёл в режим поиска, использовав Ctrl-s (Рис.9.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.9.1.png?raw=true)  
+Рис.9.1
+
+- Нашёл слова и переключался между ними (Рис. 9.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.9.2.png?raw=true)  
+Рис.9.2
+
+- Вышел из режима поиска, нажав Ctrl – g (Рис9.3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.9.3.png?raw=true)  
+Рис.9.3
+
+- Ввёл слово, которое хочу заменить и слово, которым хотел заменить данное (Рис. 9.4).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.9.4.png?raw=true)  
+Рис.9.4
+
+- Слово было успешно заменено (Рис. 9.5).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(9)/9.9.5.png?raw=true)  
+Рис.9.5
+
+---
+
+**Выводы, согласованные с заданием работы:**
+Ознакомился с операционной системой Linux. Получил практические навыки работы с редактором Emacs.
