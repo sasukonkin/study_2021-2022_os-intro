@@ -1,119 +1,87 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+**РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+**Факультет физико-математических и естественных наук**
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+*Отчёт по лабораторной работе №13        
+Дисциплина: Операционные системы*
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+Студент: Суконкин С.А.  
+Группа: НКНбд-02-21  
+№ ст. билета: 1032216457                                       
+
+МОСКВА
+2022 г.
+
 ---
 
-# Цель работы
+**Цель:**
+Приобрести простейшие навыки разработки, анализа, тестирования и откладки приложений в ОС типа UNIX/Linux на примере создания на языке программирования С калькулятора с простейшими функциями. 
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+---
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+**Описание результатов выполнения задания:**
 
-# Задание
+**№1.**
+Создал в домашнем каталоге подкаталог ~/work/os/lab_prog (Рис.1).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.1.png?raw=true)        
+Рис.1  
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+**№2.**
+Создал в новом каталоге 3 файла: calculate.h, calculate.c, main.c. В каждый файл вписал необходимую программу (Рис. 2.1  - 2.4).   
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.2.1.png?raw=true)     
+Рис.2.1  
 
-# Теоретическое введение
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.2.2.png?raw=true)  
+Рис.2.2  
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.2.3.png?raw=true)  
+Рис.2.3  
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.2.4.png?raw=true)  
+Рис.2.4  
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+**№3.**
+Выполнил компиляцию программы посредством gcc (Рис. 3).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.3.png?raw=true)    
+Рис.3  
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+**№5.**
+Создал Makefile со следующим содержимым (Рис. 5).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.5.png?raw=true)  
+Рис.5  
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+**№6.**
+С помощью gdb выполнил откладку программы calcul (Рис.6.1), запустил откладку внутри откладчика с помощью run (Рис.6.2), для постраничного просмотра исходного кода использовал команду list (Рис.6.3), для просмотра с 12 по 15 строку исходного кода использовал list с параметрами (Рис.6.4), для просмотра определённых строк неосновного файла использовал list с параметрами (Рис.6.5), установил точку останова в файле calculate.c на строке 21, после удалил эту точку (Рис.6.6), вывел информацию об имеющихся в проекте точках останова (Рис.6.7).      
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.1.png?raw=true)    
+Рис.6.1  
 
-# Выполнение лабораторной работы
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.2.png?raw=true)    
+Рис.6.2  
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.3.png?raw=true)  
+Рис.6.3  
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.4.png?raw=true)  
+Рис.6.4  
 
-# Выводы
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.5.png?raw=true)  
+Рис.6.5  
 
-Здесь кратко описываются итоги проделанной работы.
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.6.png?raw=true)  
+Рис.6.6  
 
-# Список литературы{.unnumbered}
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.6.7.png?raw=true)  
+Рис.6.7  
 
-::: {#refs}
-:::
+**№7.**
+С помощью утилиты splint проанализировал коды файлов calculate.c и main.c (Рис.7.1 — 7.2).  
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.7.1.png?raw=true)    
+Рис.7.1   
+
+![1](https://github.com/sasukonkin/Otchyoty/blob/main/New%20folder%20(13)/13.7.2.png?raw=true)    
+Рис.7.2   
+
+---
+
+**Выводы, согласованные с заданием работы:**
+Приобрёл простейшие навыки разработки, анализа, тестирования и откладки приложений в ОС типа UNIX/Linux на примере создания на языке программирования С калькулятора с простейшими функциями.
